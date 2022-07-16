@@ -82,6 +82,9 @@ where
     pub fn get_my_spaces(&self) -> GetSpacesRequestBuilder<A, Vec<Space>, SimpleResultCountMeta> {
         self.client.get_spaces_by_creator_ids([self.user_id])
     }
+    pub fn get_my_reverse_chronological_timelines(&self) -> GetTimelineRequestBuilder<A, Vec<Tweet>, TweetsMeta> {
+        self.client.get_reverse_chronological_timelines(self.user_id)
+    }
     pub fn get_my_tweets(&self) -> GetTimelineRequestBuilder<A, Vec<Tweet>, TweetsMeta> {
         self.client.get_user_tweets(self.user_id)
     }
