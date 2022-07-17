@@ -28,6 +28,12 @@ where
     }
 }
 
+impl<A> TwitterApiWithUserCtx<A> {
+    pub fn user_id(&self) -> NumericId {
+        self.user_id
+    }
+}
+
 impl<A> TwitterApiWithUserCtx<A>
 where
     A: Authorization,
